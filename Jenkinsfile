@@ -18,9 +18,7 @@ pipeline {
         beforeAgent true
         branch 'test'
       }
-      steps {
-        error 'fake error to force failure in test stage/gate'
-        
+      steps {        
         copyArtifacts projectName: '../helloworld-api/development'
         gateConsumesArtifact file: 'application.sh'
       }
